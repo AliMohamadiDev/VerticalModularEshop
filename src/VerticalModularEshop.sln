@@ -17,13 +17,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Basket", "Basket", "{1D7C0B
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Catalog", "Catalog", "{D1787391-5BFB-4954-9D09-1436D019CC0E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Catalog", "Modules\Catalog\Catalog\Catalog.csproj", "{C47329C2-3556-4C7C-96B4-201B14EE1D3B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Catalog", "Modules\Catalog\Catalog\Catalog.csproj", "{C47329C2-3556-4C7C-96B4-201B14EE1D3B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Basket", "Modules\Basket\Basket\Basket.csproj", "{A6DC5E2D-532A-42A4-B657-33C406EF818E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Basket", "Modules\Basket\Basket\Basket.csproj", "{A6DC5E2D-532A-42A4-B657-33C406EF818E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ordering", "Modules\Ordering\Ordering\Ordering.csproj", "{E3D29307-9A15-4857-A7DC-7957CC5EF050}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ordering", "Modules\Ordering\Ordering\Ordering.csproj", "{E3D29307-9A15-4857-A7DC-7957CC5EF050}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shared", "Shared\Shared\Shared.csproj", "{02606FB9-28CD-44E6-A2D8-6D2DB0F441F9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Shared", "Shared\Shared\Shared.csproj", "{02606FB9-28CD-44E6-A2D8-6D2DB0F441F9}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{AF98C081-D9C2-4D0A-8384-C3B1114999A9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +53,10 @@ Global
 		{02606FB9-28CD-44E6-A2D8-6D2DB0F441F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{02606FB9-28CD-44E6-A2D8-6D2DB0F441F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{02606FB9-28CD-44E6-A2D8-6D2DB0F441F9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AF98C081-D9C2-4D0A-8384-C3B1114999A9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AF98C081-D9C2-4D0A-8384-C3B1114999A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AF98C081-D9C2-4D0A-8384-C3B1114999A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AF98C081-D9C2-4D0A-8384-C3B1114999A9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
