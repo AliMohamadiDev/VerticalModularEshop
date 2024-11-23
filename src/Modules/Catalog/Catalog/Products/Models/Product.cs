@@ -38,7 +38,6 @@ public class Product : Aggregate<Guid>
         Category = category;
         Description = description;
         ImageUrl = imageUrl;
-        Price = price;
 
         // if price has changed, raise ProductPriceChanged domain event
         if (Price != price)
