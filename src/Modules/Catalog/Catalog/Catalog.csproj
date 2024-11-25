@@ -15,6 +15,7 @@
 	  <Folder Include="Products\Events\" />
 	  <Folder Include="Products\Features\DeleteProduct\" />
 	  <Folder Include="Products\Features\GetProductById\" />
+	  <Folder Include="Products\Exceptions\" />
 	</ItemGroup>
 
 </Project>

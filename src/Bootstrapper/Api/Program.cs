@@ -1,5 +1,8 @@
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Host.UseSerilog((context, config) =>
+    config.ReadFrom.Configuration(context.Configuration));
+
 // Add services to the container.
 
 builder.Services.AddCarterWithAssemblies(typeof(CatalogModule).Assembly);
@@ -9,11 +12,17 @@ builder.Services
     .AddBasketModule(builder.Configuration)
     .AddOrderingModule(builder.Configuration);
 
+builder.Services.AddExceptionHandler<CustomExceptionHandler>();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
 
 app.MapCarter();
+app.UseSerilogRequestLogging();
+
+// We relying on CustomExceptionHandler, so we use a empty option object
+app.UseExceptionHandler(options => { });
 
 app
     .UseCatalogModule()
