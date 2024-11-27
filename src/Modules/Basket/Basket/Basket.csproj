@@ -17,6 +17,7 @@
     <Folder Include="Basket\Features\CheckoutBasket\" />
     <Folder Include="Basket\Features\CreateBasket\" />
     <Folder Include="Basket\Features\UpdateItemPriceInBasket\" />
+    <Folder Include="Data\JsonConverters\" />
   </ItemGroup>
 
 </Project>

@@ -18,23 +18,16 @@ public class AddItemIntoBasketCommandValidator : AbstractValidator<AddItemIntoBa
 public class AddItemIntoBasketHandler
      : ICommandHandler<AddItemIntoBasketCommand, AddItemIntoBasketResult>
 {
-    private readonly BasketDbContext _dbContext;
+    private readonly IBasketRepository _basketRepository;
 
-    public AddItemIntoBasketHandler(BasketDbContext dbContext)
+    public AddItemIntoBasketHandler(IBasketRepository basketRepository)
     {
-        _dbContext = dbContext;
+        _basketRepository = basketRepository;
     }
 
     public async Task<AddItemIntoBasketResult> Handle(AddItemIntoBasketCommand command, CancellationToken cancellationToken)
     {
-        var shoppingCart = await _dbContext.ShoppingCarts
-            .Include(x => x.Items)
-            .SingleOrDefaultAsync(x => x.UserName == command.UserName, cancellationToken);
-
-        if (shoppingCart == null)
-        {
-            throw new BasketNotFoundException(command.UserName);
-        }
+        var shoppingCart = await _basketRepository.GetBasket(command.UserName, false, cancellationToken);
 
         shoppingCart.AddItem(
             command.ShoppingCartItem.ProductId,
@@ -43,7 +36,7 @@ public class AddItemIntoBasketHandler
             command.ShoppingCartItem.Price,
             command.ShoppingCartItem.ProductName);
 
-        await _dbContext.SaveChangesAsync(cancellationToken);
+        await _basketRepository.SaveChangesAsync(command.UserName, cancellationToken);
 
         return new AddItemIntoBasketResult(shoppingCart.Id);
     }

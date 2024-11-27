@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Builder;
+﻿using Basket.Data.Repositories;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.EntityFrameworkCore.Diagnostics;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -11,6 +12,10 @@ public static class BasketModule
 {
     public static IServiceCollection AddBasketModule(this IServiceCollection services, IConfiguration configuration)
     {
+        // Application Use Case services
+        services.AddScoped<IBasketRepository, BasketRepository>();
+        services.Decorate<IBasketRepository, CachedBasketRepository>();
+
         // Data - Infrastructure services
         var connectionString = configuration.GetConnectionString("Database");
 
