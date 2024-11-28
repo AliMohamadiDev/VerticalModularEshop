@@ -1,10 +1,4 @@
-﻿using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
-
-namespace Catalog.Products.Features.GetProductById;
-
-public record GetProductByIdQuery(Guid Id) : IQuery<GetProductByIdResult>;
-
-public record GetProductByIdResult(ProductDto Product);
+﻿namespace Catalog.Products.Features.GetProductById;
 
 public class GetProductByIdHandler : IQueryHandler<GetProductByIdQuery, GetProductByIdResult>
 {
