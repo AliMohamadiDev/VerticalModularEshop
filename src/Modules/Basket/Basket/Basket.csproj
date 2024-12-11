@@ -16,9 +16,10 @@
     <Folder Include="Basket\Dtos\" />
     <Folder Include="Basket\EventHandlers\" />
     <Folder Include="Basket\Features\AddItemIntoBasket\" />
-    <Folder Include="Basket\Features\CheckoutBasket\" />
     <Folder Include="Basket\Features\CreateBasket\" />
     <Folder Include="Data\JsonConverters\" />
+    <Folder Include="Data\Migrations\" />
+    <Folder Include="Data\Processors\" />
   </ItemGroup>
 
 </Project>
